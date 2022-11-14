@@ -8,9 +8,11 @@ import Header from './components/Header';
 
 const Container = styled.div`
 display: flex;
+flex-direction: row;
 justify-content: center;
 align-items: center;
-height: 100vh;
+height: 50vh;
+margin-top: 50px;
 `
 
 const Button = styled.button`
@@ -40,28 +42,30 @@ setShowModal(prev => !prev)
 const galleryImages = [
 {
 img: "https://image.freepik.com/free-vector/neon-square-background_1189-330.jpg",
+name: "neon lights",
 id: 1
 },
 {
 img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80",
-id: 2
+name: "ocean",
+id:2
 },
-{
-img: "https://image.freepik.com/free-vector/neon-square-background_1189-330.jpg",
-id: 3
-},
-{
-img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80",
-id: 4
-},
-{
-img: "https://image.freepik.com/free-vector/neon-square-background_1189-330.jpg",
-id: 5
-},
-{
-img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80",
-id: 6
-},
+// {
+// img: "https://image.freepik.com/free-vector/neon-square-background_1189-330.jpg",
+// id: 3
+// },
+// {
+// img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80",
+// id: 4
+// },
+// {
+// img: "https://image.freepik.com/free-vector/neon-square-background_1189-330.jpg",
+// id: 5
+// },
+// {
+// img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80",
+// id: 6
+// },
 ]
 useEffect(() => {
 const init = () => {
@@ -73,10 +77,11 @@ init()
 return (
 <div className="App">
 <Header />
-<Button onClick={openModal}>I'm a modal</Button>
+<Button onClick={openModal}>Options</Button>
 <Modal showModal={showModal} setShowModal={setShowModal} pics={galleryImages} showIndexs={showIndexs} handleShowIndexs={handleShowIndexs} />
+<Container>
 <WSPGallery galleryImages={galleryImages} showIndexs={showIndexs} handleShowIndexs={handleShowIndexs} />
-
+</Container>
 
 
 
